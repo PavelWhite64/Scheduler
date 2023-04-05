@@ -30,7 +30,8 @@ public class TodosTest {
 
     @Test
     public void matchesQueryTitle() {
-        SimpleTask simpleTask = new SimpleTask(5, "query");
+
+        SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
@@ -49,9 +50,10 @@ public class TodosTest {
         todos.add(meeting);
 
 
-        Task[] expected = ;
-        Task[] actual = todos.findAll();
-        Assertions.assertArrayEquals(expected, actual);
+
+        boolean expected = true;
+        boolean actual = simpleTask.matches(simpleTask.getTitle());
+        Assertions.assertArrayEquals(new Boolean[]{expected}, new Boolean[]{actual});
     }
 
 }
